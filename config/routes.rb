@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/new'
+  get 'log_in' => "sessions#new", :as => "log_in"
+  get 'sign_up' => "users#new", :as => "sign_up"
+  get 'log_out' => "sessions#destroy", :as => "log_out"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -15,6 +19,8 @@ Rails.application.routes.draw do
   get '/pages/apps', to: 'pages#viewapps'
   get '/pages/developer', to: 'pages#developer'
   
+  resource :users
+  resource :sessions
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
