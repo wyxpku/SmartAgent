@@ -1,2 +1,56 @@
-<%= render 'share/header' %>
-INDEX
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>SmartAgent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+>
+  <%= stylesheet_link_tag "bootstrap" %>
+  <%= stylesheet_link_tag "smartagent" %>
+  <%= stylesheet_link_tag "sticky-footer-navbar" %>
+</head>
+<style>
+    .salinks {
+        font-size: 18px;
+    }
+</style>
+<body>
+<div id="wrap">
+  <%= render "share/header" %>
+  <div class="container">
+    <div class="row" id="board1">
+      <div class="col-md-2 col-md-offset-4">
+        <p class="board1_name">我分享的应用</p>
+        <p class="board1_value">2</p>
+        <p class="board1_des">已有184人使用</p>
+      </div>
+      <div class="col-md-2">
+        <p class="board1_name">我定制的应用</p>
+        <p class="board1_value">5</p>
+        <p class="board1_des">已开启1个</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <p style="font-size:25px">推荐应用</p>
+    <div class="row app">
+      <div class="col-md-4">
+        <img src="img/applicationexp.png">
+        <p class="app_name">Rent Reminder</p>
+        <p class="app_creater">by cuida on 2014 6 10</p>
+        <p class="app_description">1 users 3 favorites</p>
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "share/footer" %>
+
+<%= javascript_include_tag "jquery" %>
+<%= javascript_include_tag "bootstrap.min" %>
+
+</body>
+</html>

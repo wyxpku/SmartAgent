@@ -9,8 +9,10 @@ class PagesController < ApplicationController
   end
   def createapp
   end
-  def apps
+  def viewapps
   end
   def resources
+  end
+  def developer
   end
 end

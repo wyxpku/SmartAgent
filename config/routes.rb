@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   get '/pages/resources', to: 'pages#resources'
   get '/pages/createapp', to: 'pages#createapp'
   get '/pages/location', to: 'pages#location'
-  get '/pages/apps', to: 'pages#apps'
+  get '/pages/apps', to: 'pages#viewapps'
+  get '/pages/developer', to: 'pages#developer'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
