@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>SmartAgent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <%= stylesheet_link_tag "bootstrap" %>
+  <%= stylesheet_link_tag "smartagent" %>
+  <%= stylesheet_link_tag "sticky-footer-navbar" %>
+</head>
+
+<body>
+
+
+<div id="wrap">
+  <br><%= render "share/header" %>
+  <div class="container">
+    <div class="tabbable tabs-left">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="#iamdeveloper" data-toggle="tab">我是开发者</a>
+        </li>
+        <li>
+          <a href="#resourceregister" data-toggle="tab">资源注册</a>
+        </li>
+        <li>
+          <a href="#myresource" data-toggle="tab">我的资源</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade active in" id="iamdeveloper">
+          <div class="col-md-6 col-md-offset-2">
+            <h4 style="padding-top: 25px">
+              开发者sdk下载
+            </h4>
+            <strong>
+              开发者SDK使您快速完成Sensor/Actuator的开发 移动端开发请下载iOS/Android
+              SDK，PC端开发请下载PC版SDK
+            </strong>
+            <img src="img/c.png" />
+
+            <h4 style="padding-top: 25px">
+              Eclipse插件下载
+            </h4>
+            <strong>
+              Eclipse开发插件帮助您在Eclipse中封装已有的业务逻辑，迅速接入平台
+            </strong>
+            <img src="img/d.png" />
+
+            <h4 style="padding-top: 25px">
+              获取API Key
+            </h4>
+            <strong>
+              Eclipse开发插件帮助您在Eclipse中封装已有的业务逻辑，迅速接入平台
+            </strong>
+            <img src="img/e.png" />
+            <h4 style="padding-top: 25px">
+              <a href="./developerhelp.html"><span class="glyphicon glyphicon-chevron-right"></span>开发者帮助</a>
+            </h4>
+
+            <h4 style="padding-top: 25px">
+              <a href="./developerhelp.html"><span class="glyphicon glyphicon-chevron-right"></span>开发者论坛</a>
+            </h4>
+
+
+          </div>
+        </div>
+
+
+
+
+        <div class="tab-pane fade" id="resourceregister">
+          <div class="col-md-6 col-md-offset-2">
+            <form class="form-horizontal" role="form" method="post" action="./registry" id="registryform">
+              <div class="form-group">
+                <label for="exampleInputEmail1">资源类型</label>
+                <select class="form-control">
+                  <option>Sensor</option>
+                  <option>Actuator</option>
+
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">资源类型</label>
+                <select class="form-control">
+                  <option>Android</option>
+                  <option>IOS</option>
+                  <option>PC</option>
+
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">填写您的API Key</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">填写您的资源URL</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">提交您的资源描述文档</label>
+                <textarea class="form-control" rows="7" id="paper"></textarea>
+              </div>
+              <div class="form-group">
+                <label>选择您的资源服务位置</label>
+              </div>
+              <img src="img/f.jpg" class="img-responsive"/>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">选择资源覆盖范围</label>
+                <select class="form-control" name="range">
+                  <option>北京市</option>
+                  <option>1km以内</option>
+                  <option>5km以内</option>
+                  <option>10km以内</option>
+
+                </select>
+              </div>
+
+
+
+              <a class="btn btn-success btn-block" role="button" type="submit" onClick="document.getElementById('registryform').submit();">注册资源</a>
+
+            </form>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="myresource">
+          <div class="col-md-8 col-md-offset-2">
+            <p style="padding-top:20px"></p>
+            <div class="col-md-12">
+              <a href="./userpage.jsp" class="btn btn-warning" role="button">我的传感器</a>
+              <a href="./userpage.jsp" class="btn btn-warning" role="button">我的执行器</a>
+            </div>
+            <p style="padding-top:20px"></p>
+            <div class="col-md-4">
+              <img src="img/u1.png"/>
+            </div>
+
+            <div class="col-md-4">
+              <img src="img/u1.png"/>
+            </div>
+            <div class="col-md-4">
+              <img src="img/u1.png"/>
+            </div>
+            <p style="padding-top:20px">&nbsp;</p>
+            <div class="col-md-4">
+              <img src="img/u1.png"/>
+            </div>
+            <div class="col-md-4">
+              <img src="img/u1.png"/>
+            </div>
+            <div class="col-md-4">
+              <img src="img/u1.png"/>
+            </div>
+            <p style="padding-top:20px">&nbsp;</p>
+            <div class="col-md-4">
+              <img src="img/u1.png"/>
+            </div>
+            <div class="col-md-4">
+              <img src="img/u1.png"/>
+            </div>
+            <div class="col-md-4">
+              <img src="img/u1.png"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "share/footer" %>
+
+
+<script src="js/jquery.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

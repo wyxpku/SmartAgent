@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>SmartAgent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <%= stylesheet_link_tag "bootstrap" %>
+  <%= stylesheet_link_tag "smartagent" %>
+  <%= stylesheet_link_tag "sticky-footer-navbar" %>
+  <%= stylesheet_link_tag "grumble.min" %>
+</head>
+<style>
+    .salinks {
+        font-size: 18px;
+    }
+</style>
+<body>
+<div id="wrap">
+  <%= render "share/header" %>
+  <div class="container">
+
+    <div class="tabbable tabs-left">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="#dingzhi" data-toggle="tab">我的订制</a>
+        </li>
+        <li>
+          <a href="#fengxiang" data-toggle="tab">我的分享</a>
+        </li>
+        <li>
+          <a href="#shoucang" data-toggle="tab">我的收藏</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane fade active in" id="dingzhi">
+
+          <div class="myapp col-md-offset-1">
+            <p class="myapp_title">
+              提醒跑步应用
+            </p>
+            <p class="myapp_des">
+              如果明天早晨天气好，提醒我去跑步
+            </p>
+            <img src="img/applicationexp.png" width="30%">
+
+
+
+
+            <button type="button" class="btn btn-default btn-lg startapp">
+              <span class="glyphicon glyphicon-off"></span>
+            </button>
+
+            <button type="button" class="btn btn-default btn-lg shareapp">
+              <span class="glyphicon glyphicon-share"></span>
+            </button>
+
+            <button type="button" class="btn btn-default btn-lg editapp">
+              <span class="glyphicon glyphicon-edit"></span>
+            </button>
+
+
+
+
+          </div>
+        </div>
+        <div class="tab-pane fade" id="fengxiang">
+          <div class="myapp col-md-offset-1">
+            <p class="myapp_title">
+              提醒跑步应用
+            </p>
+            <p class="myapp_des">
+              如果明天早晨天气好，提醒我去跑步
+            </p>
+            <img src="img/applicationexp.png" width="30%">
+            <p class="shareapp_des">
+              cuida分享于2014 6 19
+            </p>
+            <p class="shareapp_des">
+              12人使用  34人喜欢
+            </p>
+
+
+
+
+
+
+          </div>
+        </div>
+        <div class="tab-pane fade" id="shoucang">
+          <div class="myapp col-md-offset-1">
+            <p class="myapp_title">
+              提醒跑步应用
+            </p>
+            <p class="myapp_des">
+              如果明天早晨天气好，提醒我去跑步
+            </p>
+            <img src="img/applicationexp.png" width="30%">
+            <p class="shareapp_des">
+              xx分享于2014 6 19
+            </p>
+            <p class="shareapp_des">
+              12人使用  34人喜欢
+            </p>
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<%= render "share/footer" %>
+<!--script src="js/Bubble.js?v=5"></script>
+<script src="js/jquery.grumble.js?v=5"></script-->
+
+
+<%= javascript_include_tag "jquery" %>
+<%= javascript_include_tag "bootstrap.min" %>
+<%= javascript_include_tag "jquery.grumble.min" %>
+<%= javascript_include_tag "myapplication" %>
+
+
+</body>
+</html>
