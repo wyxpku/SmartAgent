@@ -4,10 +4,10 @@ class User < ActiveRecord::Base
 
   attr_accessor :password
 
-  validates_confirmation_of :password
-  validates_presence_of :password, :on => :create
-  validates_presence_of :email, :password_confirmation
-  validates_uniqueness_of :email
+  validates :password, :confirmation => true
+  validates :email, :password_confirmation, :presence => true
+  validates :password, :presence => true, :on => :create
+  validates :email, :uniqueness => true
 
 
   def self.authenticate(email, password)
