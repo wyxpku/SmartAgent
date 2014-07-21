@@ -1,9 +1,11 @@
 class User < ActiveRecord::Base
 
+  
   before_save :encrypt_password
 
   attr_accessor :password
 
+  validates :email, email: true, if: :email
   validates :password, :confirmation => true
   validates :email, :password_confirmation, :presence => true
   validates :password, :presence => true, :on => :create

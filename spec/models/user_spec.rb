@@ -7,6 +7,11 @@ describe User do
       user = User.new(email: nil)
       expect(user).to have(1).errors_on(:email)
     end
+
+    it "is invalide when the email address is incorrect" do
+      user = User.new(email: "123123asdf")
+      expect(user).to have(1).errors_on(:email)
+    end
     
     it "is invalid without a password" do
       user = User.new(password: nil)
@@ -55,29 +60,24 @@ describe User do
 
   describe "Class method test" do
 
-    context "Test authenticate" do
-      it "is valid when email and password is correct" do
-        user = User.create(
+    before :each do
+      @user = User.create(
           email: "h@123.com",
           password: "hahaha",
           password_confirmation: "hahaha")
-        expect(User.authenticate("h@123.com", "hahaha")).to eq user
+    end
+  
+    context "Test authenticate" do
+      it "is valid when email and password is correct" do
+        expect(User.authenticate("h@123.com", "hahaha")).to eq @user
        end
       
       it "is invalid when email is correct and password is wrong" do
-        user = User.create(
-          email: "h@123.com",
-          password: "hahaha",
-          password_confirmation: "hahaha")
-        expect(User.authenticate("h@123.com", "asdfasfd")).to_not eq user
+        expect(User.authenticate("h@123.com", "asdfasfd")).to_not eq @user
        end
        
       it "is invalid when email does not exist" do
-        user = User.create(
-          email: "h@123.com",
-          password: "hahaha",
-          password_confirmation: "hahaha")
-        expect(User.authenticate("h@23.com", "hahaha")).to_not eq user
+        expect(User.authenticate("h@2xx3.com", "hahaha")).to_not eq @user
        end
 
     end
