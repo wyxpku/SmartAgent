@@ -15,4 +15,6 @@ class PagesController < ApplicationController
   end
   def developer
   end
+  def pages_myaccount
+  end
 end
