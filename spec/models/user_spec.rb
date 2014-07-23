@@ -1,55 +1,44 @@
 require "spec_helper"
 
 describe User do
+
+  describe 'something about factory' do
+    it "has a valid factory" do
+      expect(build(:user)).to be_valid
+    end
+  end
+
   describe "User model validations" do
 
     it "is invalid without an email" do
-      user = User.new(email: nil)
-      expect(user).to have(1).errors_on(:email)
+      expect(build(:user, email: nil)).to have(1).errors_on(:email)
     end
 
     it "is invalide when the email address is incorrect" do
-      user = User.new(email: "123123asdf")
-      expect(user).to have(1).errors_on(:email)
+      expect(build(:user, email: "asdf")).to have(1).errors_on(:email)
     end
     
     it "is invalid without a password" do
-      user = User.new(password: nil)
-      expect(user).to have(1).errors_on(:password)
+      expect(build(:user, password: nil)).to have(1).errors_on(:password)
     end
 
     it "is invalid without a password_confirmation" do
-      user = User.new(password_confirmation: nil)
-      expect(user).to have(1).errors_on(:password_confirmation)
+      expect(build(:user, password_confirmation: nil)).to have(1).errors_on(:password_confirmation)
     end
 
     it "is invalid when two users have the same email" do
-      User.create(
-        email: "hyd@123.com",
-        password: "asdf",
-        password_confirmation: "asdf")
+      create(:user, email: "hyd@123.com")
       
-      user = User.new(
-        email: "hyd@123.com",
-        password: "1234",
-        password: "1234")
-
-      expect(user).to have(1).errors_on(:email)
+      expect(build(:user, email: "hyd@123.com")).to have(1).errors_on(:email)
     end
 
     context "password confirmation" do
       it "is valid with an email, password and a same password_confirmation" do
-        user = User.create(
-          email: "hyd@123.com",
-          password: "1234",
-          password_confirmation: "1234")
-      
-        expect(user).to be_valid        
+        expect(build(:user)).to be_valid        
       end
 
       it "is invalid with an email, password and a different password_confirmation" do
-        user = User.create(
-          email: "hyd@123.com",
+        user = build(:user, 
           password: "1234",
           password_confirmation: "1234567")
       
