@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @actuator.name %>
+</p>
+
+<p>
+  <strong>Capbility:</strong>
+  <%= @actuator.capbility %>
+</p>
+
+<%= link_to 'Edit', edit_actuator_path(@actuator) %> |
+<%= link_to 'Back', actuators_path %>

@@ -1,0 +1,25 @@
+<%= form_for(@actuator) do |f| %>
+  <% if @actuator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@actuator.errors.count, "error") %> prohibited this actuator from being saved:</h2>
+
+      <ul>
+      <% @actuator.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :capbility %><br>
+    <%= f.text_area :capbility %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

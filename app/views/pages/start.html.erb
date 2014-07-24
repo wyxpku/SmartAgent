@@ -45,8 +45,9 @@
               </div>
             </div>
             <%= submit_tag "Log in", :class=>"btn btn-primary", :method => "get" %>
-            <%= button_to "Sign up", sign_up_path ,:class=>"btn btn-primary" %>
+
         <% end %>
+        <%= button_to "sign up", sign_up_path, :method=> "get", :class=>"btn btn-primary" %>
       </div>
     </div>
   </div>
