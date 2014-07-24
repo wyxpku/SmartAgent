@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716120613) do
+ActiveRecord::Schema.define(version: 20140724081836) do
+
+  create_table "actuators", force: true do |t|
+    t.string   "name"
+    t.text     "capbility"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "apps", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sensors", force: true do |t|
+    t.string   "name"
+    t.text     "capbility"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email"
