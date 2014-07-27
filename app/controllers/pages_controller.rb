@@ -6,10 +6,14 @@ class PagesController < ApplicationController
   def location
   end
   def myapps
-    @apps = current_user.apps.all
+    if login?
+      @apps = current_user.apps.all
+    end
   end
   def createapp
-    @app = current_user.apps.build
+    if login?
+      @app = current_user.apps.build
+    end
   end
   def viewapps
   end

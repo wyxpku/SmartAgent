@@ -1,23 +1,24 @@
 Rails.application.routes.draw do
 
+
+  root 'pages#start'
+
   resources :actuators
 
   resources :sensors
-
-  root 'pages#start'
 
   resources :users do
     resources :apps
   end
 
-  get '/pages/index', to: 'pages#index' #as: 'pages_index'
-  get '/pages/myapps', to: 'pages#myapps'
-  get '/pages/resources', to: 'pages#resources'
-  get '/pages/createapp', to: 'pages#createapp'
-  get '/pages/location', to: 'pages#location'
-  get '/pages/apps', to: 'pages#viewapps'
-  get '/pages/developer', to: 'pages#developer'
-  get '/pages/myaccount', to: 'pages#myacount'
+  get 'index', to: 'pages#index', as: 'index'
+  get 'myapps', to: 'pages#myapps', as: 'myapps'
+  get 'resources', to: 'pages#resources',as: 'resources'
+  get 'createapp', to: 'pages#createapp', as: 'createapp'
+  get 'location', to: 'pages#location', as: 'location'
+  get 'apps', to: 'pages#viewapps', as: 'apps'
+  get 'developer', to: 'pages#developer', as: 'developer'
+  get 'myaccount', to: 'pages#myacount', as: 'myaccount'
 
 
 

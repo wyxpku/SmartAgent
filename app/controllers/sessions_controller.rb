@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
 
   def create
     user = User.authenticate(params[:email], params[:password])
-     if user  
+     if user
        session[:user_id] = user.id
-       redirect_to pages_index_path
+       redirect_to index_path
      else
        render :new
      end

@@ -1,8 +1,12 @@
- <%= render "share/header" %>
+<%= render "share/header" %>
 
-<%= form_for [current_user, @app] do |f| %>
+<% if login? %>
+    <%= form_for [current_user, @app] do |f| %>
     <%= f.label 'App Name' %><%= f.text_field :name %>
     <br />
     <%= f.submit'Create App' %>
+    <% end %>
+<% else %>
+    <h2 align="center">未登录!</h2>
 <% end %>
 <%= render "share/footer" %>
