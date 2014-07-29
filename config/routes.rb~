@@ -1,75 +1,32 @@
 Rails.application.routes.draw do
-  
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
 
   root 'pages#start'
 
-  get '/pages/index', to: 'pages#index' #as: 'pages_index'
-  get '/pages/myapps', to: 'pages#myapps'
-  get '/pages/resources', to: 'pages#resources'
-  get '/pages/createapp', to: 'pages#createapp'
-  get '/pages/location', to: 'pages#location'
-  get '/pages/apps', to: 'pages#viewapps'
-  get '/pages/developer', to: 'pages#developer'
-  get '/pages/myaccount', to: 'pages#myacount'
+  resources :actuators
 
-  resource :users
-  get 'users/new'
+  resources :sensors
 
-  resource :sessions
-get 'log_in' => "sessions#new", :as => "log_in"
+  resources :users do
+    resources :apps
+  end
+
+  get 'index', to: 'pages#index', as: 'index'
+  get 'myapps', to: 'pages#myapps', as: 'myapps'
+  get 'resources', to: 'pages#resources',as: 'resources'
+  get 'createapp', to: 'pages#createapp', as: 'createapp'
+  get 'location', to: 'pages#location', as: 'location'
+  get 'apps', to: 'pages#viewapps', as: 'apps'
+  get 'developer', to: 'pages#developer', as: 'developer'
+  get 'myaccount', to: 'pages#myacount', as: 'myaccount'
+
+
+
+
+  resources :sessions
+  get 'log_in' => "sessions#new", :as => "log_in"
   get 'sign_up' => "users#new", :as => "sign_up"
   get 'log_out' => "sessions#destroy", :as => "log_out"
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end

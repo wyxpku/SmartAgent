@@ -1,0 +1,33 @@
+class PagesController < ApplicationController
+  def start
+  end
+  def index
+  end
+  def location
+  end
+  def myapps
+<<<<<<< HEAD
+    if login?
+      @apps = current_user.apps.all
+    end
+  end
+  def createapp
+    if login?
+      @app = current_user.apps.build
+    end
+=======
+    @apps = current_user.apps.all
+  end
+  def createapp
+    @app = current_user.apps.build
+>>>>>>> c9c71db62280f902060ec0e2387ec4db1a05a128
+  end
+  def viewapps
+  end
+  def resources
+  end
+  def developer
+  end
+  def pages_myaccount
+  end
+end

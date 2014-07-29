@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'apps', to: 'pages#viewapps', as: 'apps'
   get 'developer', to: 'pages#developer', as: 'developer'
   get 'myaccount', to: 'pages#myacount', as: 'myaccount'
+  get 'query/sensors', to: 'sensors#queryAll'
 
 
 

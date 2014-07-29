@@ -1,11 +1,16 @@
 class User < ActiveRecord::Base
 
+<<<<<<< HEAD
 
   
 
   has_many :apps
 
 
+=======
+  has_many :apps
+
+>>>>>>> c9c71db62280f902060ec0e2387ec4db1a05a128
   before_save :encrypt_password
 
   attr_accessor :password

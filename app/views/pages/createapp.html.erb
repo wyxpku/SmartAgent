@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= render "share/header" %>
 
 <% if login? %>
@@ -8,5 +9,13 @@
     <% end %>
 <% else %>
     <h2 align="center">未登录!</h2>
+=======
+ <%= render "share/header" %>
+
+<%= form_for [current_user, @app] do |f| %>
+    <%= f.label 'App Name' %><%= f.text_field :name %>
+    <br />
+    <%= f.submit'Create App' %>
+>>>>>>> c9c71db62280f902060ec0e2387ec4db1a05a128
 <% end %>
 <%= render "share/footer" %>

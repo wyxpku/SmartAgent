@@ -19,11 +19,17 @@
                 <%= text_field_tag :password %>
               </div>
             </div>
+<<<<<<< HEAD
             <%= submit_tag "Log in", :class=>"btn btn-primary"%>
         <% end %>
 
         <%= button_to "sign up", sign_up_path, :method=> "get", :class=>"btn btn-primary" %>
+=======
+            <%= submit_tag "Log in", :class=>"btn btn-primary", :method => "get" %>
+
+>>>>>>> c9c71db62280f902060ec0e2387ec4db1a05a128
         <% end %>
+        <%= button_to "sign up", sign_up_path, :method=> "get", :class=>"btn btn-primary" %>
       </div>
     </div>
   </div>
