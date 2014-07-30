@@ -1,71 +1,31 @@
-<%= render "share/header" %>
-<div id="wrap" style="padding-top:25px">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6"> <%= image_tag "logo.png" ,:class => "img-responsive", :width => "30%" %>
-        <h1 style="color:#CCC;font-size:48px;text-align:center"> 让世界围你转动 </h1>
-      </div>
-      <div class="col-md-3 col-md-offset-2"  style="background:url(img/grey.png);text-align:center">
-        <!--
-        <form class="form-horizontal" action="./login" method="post"
-              role="form" >
-          <div class="form-group">
-            <div class="col-md-10 col-md-offset-1">
-              <input type="email" class="form-control" id="loginemail" placeholder="请输入登录邮箱" />
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-md-10 col-md-offset-1">
-              <input type="password" class="form-control" id="password" placeholder="请输入登录密码" />
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-md-6 col-md-offset-1">
-              <input type="text" class="form-control" id="confirmcode" placeholder="请输入验证码" />
-            </div>
-            <div class="col-md-4">
-              <input type="text" style="background-color:#ddd;color:#F00" class="form-control" id="confirmcode" placeholder="AC58"  disabled/>
-            </div>
-            <span class="glyphicon glyphicon-repeat"></span>
-          </div>
-          <a href="./userpage.jsp" class="btn btn-primary" role="button">登录</a> <a href="./userpage.html" class="btn btn-primary" role="button">注册</a>
-        </form>
-        !-->
-        <%= form_tag sessions_path do %>
-            <div class="form-group" >
-              <div class="col-md-10 col-md-offset1">
-                <%= label_tag :email %>
-                <%= text_field_tag :email %>
-              </div>
-            </div>
-            <div class="form-group" >
-              <div class="col-md-10 col-md-offset1">
-                <%=  label_tag :password %>
-                <%= text_field_tag :password %>
-              </div>
-            </div>
-            <%= submit_tag "Log in", :class=>"btn btn-primary", :method => "get" %>
 
-        <% end %>
-        <%= button_to "sign up", sign_up_path, :method=> "get", :class=>"btn btn-primary" %>
-      </div>
+<%= render "share/header" %>
+<div class="main"> 
+  <div class="top">
+    <div class="container">
+      <h1>让世界,绕<span class="you">你</span>转动</h1>
+      <h3>Let the WORLD go round for YOU!</h3>
     </div>
   </div>
-  <div class="container">
-    <div class="row ">
-      <div class="col-md-4 resourcelist">
-        <div class="col-md-6"> <%= image_tag "u1.png", :class => "img-responsive" %> </div>
-        <div class="col-md-6"> <%= image_tag "u2.png", :class => "img-responsive" %> </div>
-        <div class="col-md-6"> <%= image_tag "u3.png", :class => "img-responsive" %> </div>
-        <div class="col-md-6"> <%= image_tag "u4.png", :class => "img-responsive" %> </div>
-        <div class="col-md-6"> <%= image_tag "u5.png", :class => "img-responsive" %> </div>
-        <div class="col-md-6"> <%= image_tag "u6.png", :class => "img-responsive" %> </div>
+  <div class="middle">
+    <div class="container">
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="container">
+      <div class="row ">
+        <div class="col-md-4 resourcelist">
+          <div class="col-md-6"> <%= image_tag "u1.png", :class => "img-responsive" %> </div>
+          <div class="col-md-6"> <%= image_tag "u2.png", :class => "img-responsive" %> </div>
+          <div class="col-md-6"> <%= image_tag "u3.png", :class => "img-responsive" %> </div>
+          <div class="col-md-6"> <%= image_tag "u4.png", :class => "img-responsive" %> </div>
+          <div class="col-md-6"> <%= image_tag "u5.png", :class => "img-responsive" %> </div>
+          <div class="col-md-6"> <%= image_tag "u6.png", :class => "img-responsive" %> </div>
+        </div>
+        <div class="col-md-8"> <%= image_tag "map.jpg", :class => "img-responsive" %> </div>
       </div>
-      <div class="col-md-8"> <%= image_tag "map.jpg", :class => "img-responsive" %> </div>
-
     </div>
   </div>
 </div>
-<%= render"share/footer"%>
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
+</div>
+<%= render "share/footer"%>

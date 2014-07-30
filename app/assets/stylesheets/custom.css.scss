@@ -1,0 +1,94 @@
+//全部设置
+body {
+  font-size: 14px;
+  font-family: "Microsoft YaHei", "Microsoft JhengHei", sans-serif;
+}
+
+//设置header
+.navbar {
+  .navbar-brand {
+    width: 200px;
+    background-image: image-url("logo2.png");
+    background-position: 0  50%;
+    padding-left:0px;
+    background-repeat:no-repeat;
+    background-size: 90%;
+  }
+  
+   div.pull-left {
+     margin-top:16px; 
+    
+      .logo-text {
+        font-size:1.1em;
+        color:#aaa;
+      }
+
+   }
+   .or {
+    margin-top:15px;
+    color:#aaa;
+    } 
+   }
+
+//设置main
+.main {
+  margin-top: 51px;
+.top {
+  padding:40px 0;
+  background-image: image-url("top1.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 45%;
+  //margin:1px 0 15px 0;
+  min-height:300px;
+
+  h1 {
+    color:#fff;
+    font-size:64px;
+    //font-weight:bold;
+    margin-top: 40px;
+    letter-spacing:.05em;
+
+    .you {
+      font-weight:bold;
+     }
+   }
+
+    h3 {
+      padding-left:0.3em;
+      color:#fff;
+      font-size: 32px;
+    }
+}
+//设置middle
+
+.middle {
+ margin: 15px 0px; 
+  
+  img {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width: 20%;
+  }
+
+}
+
+}
+//设置footer
+.footer {
+  margin-top:40px;
+
+  .container { 
+    text-align:center;  
+    p {
+display:inline;
+        margin-left:20px;
+    }
+  }}
+
+
+
+
+
+
+
