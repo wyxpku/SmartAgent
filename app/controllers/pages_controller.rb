@@ -10,12 +10,12 @@ class PagesController < ApplicationController
   def location
   end
   def myapps
-    if login?
+    if signin?
       @apps = current_user.apps.all
     end
   end
   def createapp
-    if login?
+    if signin?
       @app = current_user.apps.build
     end
   end
