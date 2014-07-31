@@ -1,10 +1,6 @@
 class User < ActiveRecord::Base
 
-
-  
-
   has_many :apps
-
 
   before_save :encrypt_password
 

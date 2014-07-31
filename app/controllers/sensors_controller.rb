@@ -5,6 +5,10 @@ class SensorsController < ApplicationController
   # GET /sensors.json
   def index
     @sensors = Sensor.all
+    respond_to do |format|  
+      format.js
+      format.html
+    end
   end
 
   # GET /sensors/1

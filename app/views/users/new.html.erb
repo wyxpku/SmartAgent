@@ -1,26 +1,32 @@
-<h1>Users#new</h1>
+<%= render 'share/header' %>
+<div class="main">
+  <div class='container'>
+    <% flash.each do |k, v| %>
+      <div class="alert alert-<%= k %>">
+        <%= v %>
+      </div>
+    <% end %>
+    <div class= 'top'>
+      <div class="form">
+        <h1>注册</h1>
+        <%= form_for @user do |f| %>
 
-
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <div class="form-group">  
+            <%= f.label :email, '邮箱' %>
+            <%= f.text_field :email , class: 'form-control'%>
+          </div>
+          <div class="form-group">
+            <%= f.label :password, '密码' %>
+            <%= f.password_field :password , class: 'form-control'%>
+          </div>
+          <div class="form-group">
+            <%= f.label :password_confirmation, '密码确认' %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+          </div>
+          <%= f.submit "注册", class: 'btn btn-default' %>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <%= f.label :email %><br />
-  <%= f.text_field :email %><br />
-  
-  <%= f.label :password %><br />
-  <%= f.password_field :password %><br />
-
-  <%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %><br />
-  <%= f.submit "sign up" %>
-<% end %>
+  </div>
+</div>
+<%=render 'share/footer' %>

@@ -7,9 +7,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_url, notice: 'Signed up!'
+      flash[:success] = "注册成功！请登录~"
+      redirect_to signin_path 
     else
-      render :new
+      flash[:danger] = "糟糕! 邮箱或密码错误"
+      redirect_to signup_path
     end
   end
 

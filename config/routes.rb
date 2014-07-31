@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'pages#start'
 
-  resources :users do
+  resources :users, only: [:create] do
     resources :apps
   end
 
@@ -14,14 +14,16 @@ Rails.application.routes.draw do
   get '/pages/apps', to: 'pages#viewapps'
   get '/pages/developer', to: 'pages#developer'
   get '/pages/myaccount', to: 'pages#myacount'
-  
+
+  match '/signup', to: "users#new", :as => "signup", via: :get
+  match '/signout', to: "sessions#destroy", :as => "signout", via: :get
+  match '/signin', to: "sessions#new", :as => "signin", via: :get
+
+
   resources :actuators
   resources :sensors
-  resources :sessions
+  resources :sessions, only: [:new, :create, :destroy] 
 
-  get 'log_in' => "sessions#new", :as => "log_in"
-  get 'sign_up' => "users#new", :as => "sign_up"
-  get 'log_out' => "sessions#destroy", :as => "log_out"
 
 
 end

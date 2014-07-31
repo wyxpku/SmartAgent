@@ -7,9 +7,11 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:email], params[:password])
      if user  
        session[:user_id] = user.id
+       flash[:success] = "登陆成功！欢迎回来~"
        redirect_to pages_index_path
      else
-       render :new
+       flash[:danger] = "糟糕! 邮箱或密码错误"
+       redirect_to signin_path
      end
   end
 
