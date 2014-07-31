@@ -1,9 +1,10 @@
-<ul>
-  <%if sensors %>
-<% sensors.each do |s| %>
-  <li><%= s.name %></li>
-  <li><%= s.capbility %></li>
-  <% end %>
-  <% end %>
 
+<ul>
+  <% if sensors %>
+	<% sensors.each do |s| %>
+	  <li><%= s.name %></li>
+	  <li><%= link_to "show", s, {remote: true}%></li>
+	  <li><%= s.capbility %></li>
+	<% end %>
+  <% end %>
 </ul>

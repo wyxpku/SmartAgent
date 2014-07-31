@@ -1,4 +1,6 @@
 class SensorsController < ApplicationController
+  include ResourceParser
+  
   before_action :set_sensor, only: [:show, :edit, :update, :destroy]
 
   # GET /sensors
@@ -19,6 +21,12 @@ class SensorsController < ApplicationController
   # GET /sensors/1
   # GET /sensors/1.json
   def show
+  	@sensor = Sensor.find(params[:id])
+	labels = parse @sensor.capbility
+	respond_to do |format|
+	  format.js {render :show, locals: {labels: labels }}
+	  format.html
+	end
   end
 
   # GET /sensors/new
