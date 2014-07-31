@@ -19,6 +19,11 @@ Rails.application.routes.draw do
   match '/signout', to: "sessions#destroy", :as => "signout", via: :get
   match '/signin', to: "sessions#new", :as => "signin", via: :get
 
+  
+  get 'query/sensors', to: 'sensors#queryAll'
+  get 'query/actuators', to: 'actuators#queryAll'
+  
+  get 'query/user/:user_id/app/:app_id', to: 'apps#query'
 
   resources :actuators
   resources :sensors

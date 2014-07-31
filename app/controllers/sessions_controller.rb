@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.authenticate(params[:email], params[:password])
-     if user  
+     if user
        session[:user_id] = user.id
        flash[:success] = "登陆成功！欢迎回来~"
        redirect_to pages_index_path
