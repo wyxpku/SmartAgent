@@ -7,6 +7,11 @@ class ActuatorsController < ApplicationController
     @actuators = Actuator.all
   end
 
+
+  def queryAll
+    @actuator = Actuator.all
+    render json: @actuators
+  end
   # GET /actuators/1
   # GET /actuators/1.json
   def show

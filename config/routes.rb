@@ -19,9 +19,11 @@ Rails.application.routes.draw do
   get 'apps', to: 'pages#viewapps', as: 'apps'
   get 'developer', to: 'pages#developer', as: 'developer'
   get 'myaccount', to: 'pages#myacount', as: 'myaccount'
+  
   get 'query/sensors', to: 'sensors#queryAll'
-
-
+  get 'query/actuators', to: 'actuators#queryAll'
+  
+  get 'query/user/:user_id/app/:app_id', to: 'apps#query'
 
 
   resources :sessions

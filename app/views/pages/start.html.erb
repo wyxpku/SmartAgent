@@ -3,9 +3,9 @@
   <div class="container">
     <div class="row">
         <h1 style="color:#CCC;font-size:48px;text-align:center"> 让世界围你转动 </h1>
-      </div>
+      
       <div class="col-md-3 col-md-offset-2"  style="background:url(img/grey.png);text-align:center">
-        <% if !current_user%>
+        <% if !login? %>
         <%= form_tag sessions_path do %>
             <div class="form-group" >
               <div class="col-md-10 col-md-offset1">
@@ -19,15 +19,8 @@
                 <%= text_field_tag :password %>
               </div>
             </div>
-<<<<<<< HEAD
-            <%= submit_tag "Log in", :class=>"btn btn-primary"%>
+            <%= submit_tag "Log in", :class=>"btn btn-primary" %>
         <% end %>
-
-        <%= button_to "sign up", sign_up_path, :method=> "get", :class=>"btn btn-primary" %>
-=======
-            <%= submit_tag "Log in", :class=>"btn btn-primary", :method => "get" %>
-
->>>>>>> c9c71db62280f902060ec0e2387ec4db1a05a128
         <% end %>
         <%= button_to "sign up", sign_up_path, :method=> "get", :class=>"btn btn-primary" %>
       </div>
@@ -35,4 +28,4 @@
   </div>
 
 </div>
-<%= render"share/footer"%>
+<%= render"share/footer" %>
