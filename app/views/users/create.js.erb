@@ -1,0 +1,8 @@
+$(".alert").removeClass("alert-danger alert-success").addClass("alert-<%= status %>")
+
+$(".alert").html("<p><%= info %></p>")
+
+<% if status == "success" %>
+  window.location.replace("<%= signin_url  %>")
+<% end %>
+

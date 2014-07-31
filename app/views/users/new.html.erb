@@ -1,15 +1,12 @@
 <%= render 'share/header' %>
 <div class="main">
   <div class='container'>
-    <% flash.each do |k, v| %>
-      <div class="alert alert-<%= k %>">
-        <%= v %>
+      <div class="alert">
       </div>
-    <% end %>
     <div class= 'top'>
       <div class="form">
         <h1>注册</h1>
-        <%= form_for @user do |f| %>
+        <%= form_for @user, remote: true do |f| %>
 
           <div class="form-group">  
             <%= f.label :email, '邮箱' %>
@@ -23,7 +20,7 @@
             <%= f.label :password_confirmation, '密码确认' %>
             <%= f.password_field :password_confirmation, class: 'form-control' %>
           </div>
-          <%= f.submit "注册", class: 'btn btn-default' %>
+          <%= f.submit "注册",  class: 'btn btn-default' %>
         <% end %>
       </div>
     </div>

@@ -7,11 +7,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "注册成功！请登录~"
-      redirect_to signin_path 
+      status = "success"
+      info = "注册成功！请登录~"
+      respond_to do |format| 
+        format.js { render :create, locals: {status: status, info: info}}
+      end
     else
-      flash[:danger] = "糟糕! 邮箱或密码错误"
-      redirect_to signup_path
+      status = "danger"
+      info = "糟糕! 邮箱或密码错误"
+      respond_to do |format|
+        format.js {render :create, locals: {status: status, info: info}}
+      end
     end
   end
 

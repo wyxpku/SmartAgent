@@ -1,9 +1,8 @@
 class PagesController < ApplicationController
   def start
     if signin?
-      render :index
+      render :createapp
     end
-
   end
   def index
   end
