@@ -1,7 +1,7 @@
 
 <%= render "share/header" %>
-<div>
-	<h1>My apps</h1>
+<div class="container">
+	
   <% if signin? %>
 		<% @apps.each do |f| %>
       <ul>

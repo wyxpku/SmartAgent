@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 	
 	def queryApps
 		@apps = User.find(params[:user_id]).apps
-		#@apps = current_user.apps
+		@apps = current_user.apps
 		render json: @apps
 	end
   
