@@ -1,56 +1,49 @@
 <%= render "share/header" %>
 <div class="main">
   <div class="container">
-    <%= form_for [current_user, @app] do |f| %>
-      <%= f.label 'App Name' %><%= f.text_field :name %>
-      <br />
-      <%= f.submit'Create App' %>
-    <% end %>
-  </div>
 
-  <!-- Button trigger modal -->
-<<<<<<< HEAD
-  <%= button_to "传感器", sensors_path, remote: true, method: :get, "data-toggle" => "modal", class: "btn btn-primary btn-lg" %>
-  <!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sensor" >
-   传感器 
- </button>-->
-=======
-  <%= button_to "传感器", sensors_path, remote: true, method: :get, "data-toggle" => "modal", class: "btn btn-primary btn-lg", "data-target" => "#sensor" %>
-  <%= button_to "触发器", actuators_path, remote: true, method: :get, "data-toggle" => "modal", class: "btn btn-primary btn-lg", "data-target" => "#actuator" %> 
->>>>>>> a9aecafe61c9b00de2ecc5fe83e039b30fe749e2
-  
-  <!-- sensor Modal -->
-  <div class="modal fade" id="sensor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <h4 class="modal-title" id="myModalLabel">Sensor</h4>
-        </div>
-        <div class="modal-body"></div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+    <!-- Button trigger modal -->
+    <%= button_to "传感器", sensors_path, remote: true, method: :get, "data-toggle" => "modal", class: "btn btn-primary btn-lg" %>
+    <!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sensor" >
+      传感器 
+    </button>-->
+    <%= button_to "触发器", actuators_path, remote: true, method: :get, "data-toggle" => "modal", class: "btn btn-primary btn-lg", "data-target" => "#actuator" %> 
+
+    <!-- sensor Modal -->
+    <div class="modal fade" id="sensor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Sensor</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  <!-- actuator Modal -->
-  <div class="modal fade" id="actuator" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <h4 class="modal-title" id="myModalLabel">Actuator</h4>
-        </div>
-        <div class="modal-body"></div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+
+    <!-- actuator Modal -->
+    <div class="modal fade" id="actuator" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Actuator</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <%= render "share/footer" %>
+</div>
+
+    <%= render "share/footer" %>
