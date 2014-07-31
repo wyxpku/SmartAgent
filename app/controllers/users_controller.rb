@@ -3,6 +3,12 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+	
+	def queryApps
+		@apps = User.find(params[:user_id]).apps
+		#@apps = current_user.apps
+		render json: @apps
+	end
   
   def create
     @user = User.new(user_params)

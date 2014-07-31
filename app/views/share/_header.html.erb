@@ -12,6 +12,7 @@
           <li><%= link_to "浏览应用", pages_apps_path %></li>
           <li><%= link_to "浏览资源", pages_resources_path %></li>
           <li><%= link_to "用户", '#' %></li>
+					<li><%= current_user.id %></li>
         <% else %>
           <li>
           <%= link_to "登陆", signin_path %>

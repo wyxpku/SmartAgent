@@ -1,95 +1,20 @@
-<div id="wrap">
-  <%= render "share/header" %>
-  <% if login? %>
-  <div class="container">
 
-    <div class="tabbable tabs-left">
-      <ul class="nav nav-tabs">
-        <li class="active">
-          <a href="#dingzhi" data-toggle="tab">我的订制</a>
-        </li>
-        <li>
-          <a href="#fengxiang" data-toggle="tab">我的分享</a>
-        </li>
-        <li>
-          <a href="#shoucang" data-toggle="tab">我的收藏</a>
-        </li>
-      </ul>
-
-      <div class="tab-content">
-        <div class="tab-pane fade active in" id="dingzhi">
-            <table>
-              <thead>
-                <th>AppName</th>
-              </thead>
-              <tbody>
-                <% @apps.each do |f| %>
-                    <tr>
-                      <td><%= f.name %></td>
-                      <td><%= link_to 'Destory', [current_user, f], method: :delete, data: {confirm: 'are you sure?'} %></td>
-                    </tr>
-
-                <% end %>
-              </tbody>
-
-            </table>
-
-        </div>
-        <div class="tab-pane fade" id="fengxiang">
-          <div class="myapp col-md-offset-1">
-            <p class="myapp_title">
-              提醒跑步应用
-            </p>
-            <p class="myapp_des">
-              如果明天早晨天气好，提醒我去跑步
-            </p>
-            <img src="img/applicationexp.png" width="30%">
-            <p class="shareapp_des">
-              cuida分享于2014 6 19
-            </p>
-            <p class="shareapp_des">
-              12人使用  34人喜欢
-            </p>
-
-
-
-
-
-
-          </div>
-        </div>
-        <div class="tab-pane fade" id="shoucang">
-          <div class="myapp col-md-offset-1">
-            <p class="myapp_title">
-              提醒跑步应用
-            </p>
-            <p class="myapp_des">
-              如果明天早晨天气好，提醒我去跑步
-            </p>
-            <img src="img/applicationexp.png" width="30%">
-            <p class="shareapp_des">
-              xx分享于2014 6 19
-            </p>
-            <p class="shareapp_des">
-              12人使用  34人喜欢
-            </p>
-
-
-
-
-
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<% else %>
+<%= render "share/header" %>
+<div>
+	<h1>My apps</h1>
+  <% if signin? %>
+		<% @apps.each do |f| %>
+      <ul>
+				<li>name</li>
+       	<li><%= f.name %></li>
+				<li>id</li>
+				<li><%= f.id %></li>
+        <li><%= link_to 'Destory', [current_user, f], method: :delete, data: {confirm: 'are you sure?'} %></li>
+       </ul>
+    <% end %> 
+	<% else %>
       <h2 align="center">未登录!</h2>
-<% end %>
+	<% end %>
 </div>
-
 <%= render "share/footer" %>
-<!--script src="js/Bubble.js?v=5"></script>
-<script src="js/jquery.grumble.js?v=5"></script-->
 

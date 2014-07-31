@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/pages/developer', to: 'pages#developer'
   get '/pages/myaccount', to: 'pages#myacount'
 
+
   match '/signup', to: "users#new", :as => "signup", via: :get
   match '/signout', to: "sessions#destroy", :as => "signout", via: :get
   match '/signin', to: "sessions#new", :as => "signin", via: :get
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
   get 'query/actuators', to: 'actuators#queryAll'
   
   get 'query/user/:user_id/app/:app_id', to: 'apps#query'
+  get 'query/user/:user_id/apps', to: 'users#queryApps'
 
   resources :actuators
   resources :sensors
