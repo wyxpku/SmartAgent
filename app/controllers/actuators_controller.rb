@@ -5,15 +5,15 @@ class ActuatorsController < ApplicationController
   # GET /actuators
   # GET /actuators.json
   def index
-    @actuators = Actuator.all
+    @resources =  Actuator.all
 	descriptions = Array.new
 	identifications = Array.new
-	@actuators.each do |actuator|
+	@resources.each do |actuator|
 		descriptions.push(actuator_description actuator.capbility)
 		identifications.push(actuator_identification actuator.capbility)
 	end
 	respond_to do |format|
-		format.js { render :index, locals: {descriptions: descriptions, identifications: identifications}}
+		format.js { render 'share/resource_grid', locals: {resource_name: '执行器', descriptions: descriptions, identifications: identifications}}
 		format.html
 	end
   end
@@ -32,7 +32,7 @@ class ActuatorsController < ApplicationController
     session[:app][:actuator] = Hash.new
     session[:app][:actuator][:actuatorid] = @actuator.id
 	  respond_to do |format|
-	    format.js {render :show, locals: {labels: labels }}
+	    format.js {render 'share/resource_form', locals: {resource: :actuator, labels: labels }}
 		format.html
 	end
   end

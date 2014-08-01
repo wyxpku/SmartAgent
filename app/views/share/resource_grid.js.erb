@@ -1,0 +1,16 @@
+$('#resource .modal-body').html("<%= escape_javascript(render partial: 'share/resource_grid', locals: { resources: @resources, descriptions: descriptions, identifications: identifications}) %>")
+
+
+$(document).ready(function(){
+    $('.modal a').hover(
+      function(){
+      $(this).popover('show');},
+      function(){
+      $(this).popover('hide');}
+      );
+    });
+
+$('.modal-dialog').addClass('modal-lg')
+$('.modal-title').html('<%= resource_name  %>')
+$('#resource').modal('show')
+

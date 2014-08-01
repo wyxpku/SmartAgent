@@ -1,0 +1,23 @@
+<div class="resources-body">
+
+  <% if resources %>
+    <% resources.each_index do |i| %>
+      <div class="resource-block resource-block-<%= i  %>">
+        <figure> 
+        <% content = "" %>
+        <% identifications[i].each do |k,v| %>
+          <% content +=  k.to_s + ":" + v.to_s + "\n" %>
+        <% end %>
+
+        <%= link_to image_tag('heihei.jpg'), resources[i], remote: true, class: 'resource-img', "data-toggle" => "popover", title: resources[i].name, "data-content" => content %>
+        <figcaption>
+        <% descriptions[i].each do |k,v| %>
+         <%= k %>:</br><%= v %>
+        <% end %>
+        </figcaption>
+        </figure>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+

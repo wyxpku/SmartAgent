@@ -6,15 +6,15 @@ class SensorsController < ApplicationController
   # GET /sensors
   # GET /sensors.json
   def index
-    @sensors = Sensor.all
+    @resources = Sensor.all
 	descriptions = Array.new
 	identifications = Array.new
-	@sensors.each do |sensor|
+	@resources.each do |sensor|
 		descriptions.push(sensor_description sensor.capbility)
 		identifications.push(sensor_identifier sensor.capbility)
 	end
     respond_to do |format|  
-      format.js { render :index, locals: {descriptions: descriptions, identifications: identifications}}
+      format.js { render 'share/resource_grid', locals: {resource_name: '传感器', descriptions: descriptions, identifications: identifications}}
       format.html
     end
   end
@@ -32,7 +32,7 @@ class SensorsController < ApplicationController
     session[:app][:sensor] = Hash.new
     session[:app][:sensor][:sensorid] = @sensor.id
     respond_to do |format|
-      format.js {render :show, locals: {labels: labels}}
+      format.js {render 'share/resource_form', locals: {resource: :sensor,labels: labels}}
       format.html
     end
   end

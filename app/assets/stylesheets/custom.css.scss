@@ -3,7 +3,11 @@ body {
   font-size: 14px;
   font-family: "Microsoft YaHei", "Microsoft JhengHei", sans-serif;
 }
-
+//修正打开modal时导航条的偏移
+.modal-open .navbar-fixed-top,
+.modal-open .navbar-fixed-bottom {
+padding-right: 17px;
+}
 //设置header
 .navbar {
   background-color: #fff;
@@ -126,6 +130,27 @@ display:inline;
 
 
 
+
+//set modal
+.modal {
+  label {
+    color:#000;
+  }
+  .form-control {
+    width: 100%;
+  }
+
+  .resource-block {
+    width: 30%;
+    float:left; 
+    margin: 1%;
+  }
+  img {
+   width: 100%;
+   height: 250px;
+   display:block; 
+  }
+}
 
 
 
