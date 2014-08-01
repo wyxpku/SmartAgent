@@ -1,6 +1,4 @@
 <%= form_for :app, url: '#' do |f| %>
-<%= f.label :sensor %>
-<%= f.text_field :sensor_id, sensor_id.to_s %>
 <% labels.each do |k, v| %>
 	<%= f.label v %>
 	<%= f.text_field k %>

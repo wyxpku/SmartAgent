@@ -1,9 +1,13 @@
 <ul>
-  <% if actuators %>
-    <% actuators.each do |a| %>
-	  <li><%= a.name %></li>
-	  <li><%= link_to "show", a, { remote: true} %></li>
-	  <li><%= a.capbility %></li>
+	<% if actuators %>
+		<% actuators.each_index do |i| %>
+			<li><%= link_to actuators[i].name, actuators[i], {remote: true} %></li>
+			<% identifications[i].each do |k,v| %>
+				<li><%= k %>:</br><%= v %></li>
+			<% end %>
+			<% descriptions[i].each do |k,v| %>
+				<li><%= k %></br><%= v %></li>
+			<% end %>
+		<% end %>
 	<% end %>
-  <% end %>
 </ul>
