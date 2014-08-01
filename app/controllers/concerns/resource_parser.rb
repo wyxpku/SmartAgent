@@ -6,14 +6,23 @@ extend ActiveSupport::Concern
 
 	private
 
-	def parse xml
-		a = Array.new
+	def SensorParse xml
+		a = Hash.new
 		doc = Document.new(xml)
 		doc.elements.each('sml:SensorML/sml:Observation/swe:DataRecord/swe:field/*') do |ele|
 			if ele.get_elements("sml:isTrigger").first.text == 'true'
-				a << ele.get_elements("gml:description").first.text
+				a[(ele.attribute :name).to_s] = ele.get_elements("gml:description").first.text
 			end
 		end
+		a
+	end
+
+	def ActuatorParse xml
+		a = Hash.new
+		doc = Document.new(xml)
+		doc.elements.each('sml:SensorML/sml:Parameter/swe:DataRecord/swe:field/*') do |ele|
+			a[(ele.attribute :name).to_s] = ele.get_elements("gml:description").first.text
+			end
 		a
 	end
 end

@@ -1,2 +1,2 @@
 
-$('#resource .modal-body').html("").html("<%= escape_javascript( render partial: 'labels', locals: {labels: labels}) %>")
+$('#resource .modal-body').html("").html("<%= escape_javascript( render partial: 'labels', locals: {labels: labels, sensor_id: sensor_id}) %>")

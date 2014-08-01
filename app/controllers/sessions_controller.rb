@@ -3,6 +3,14 @@ class SessionsController < ApplicationController
   def new
   end
 
+
+  def sensor
+	session[:app]
+  end
+
+
+
+
   def create
     user = User.authenticate(params[:email], params[:password])
      if user

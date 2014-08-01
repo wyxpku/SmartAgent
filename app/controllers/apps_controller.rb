@@ -2,6 +2,10 @@ class AppsController < ApplicationController
   def index
   end
 
+  
+
+
+
   def query
     @app = User.find(params[:user_id]).apps.find(params[:app_id])
     render json: @app

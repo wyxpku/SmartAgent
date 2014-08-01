@@ -1,8 +1,10 @@
-<%= form_tag '#' do %>
-<% labels.each do |l| %>
-	<%= label_tag l %>
-	<%= text_field_tag "123" %>
+<%= form_for :app, url: '#' do |f| %>
+<%= f.label :sensor %>
+<%= f.text_field :sensor_id, sensor_id.to_s %>
+<% labels.each do |k, v| %>
+	<%= f.label v %>
+	<%= f.text_field k %>
 <% end %>
-<%= submit_tag '123' %>
+<%= f.submit '123' %>
 <% end %>
 
