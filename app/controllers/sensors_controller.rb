@@ -7,8 +7,14 @@ class SensorsController < ApplicationController
   # GET /sensors.json
   def index
     @sensors = Sensor.all
+	descriptions = Array.new
+	identifications = Array.new
+	@sensors.each do |sensor|
+		descriptions.push(sensor_description sensor.capbility)
+		identifications.push(sensor_identifier sensor.capbility)
+	end
     respond_to do |format|  
-      format.js
+      format.js { render :index, locals: {descriptions: descriptions, identifications: identifications}}
       format.html
     end
   end
@@ -22,7 +28,7 @@ class SensorsController < ApplicationController
   # GET /sensors/1.json
   def show
   	@sensor = Sensor.find(params[:id])
-	labels = SensorParse @sensor.capbility
+	labels = sensor_parse @sensor.capbility
 	respond_to do |format|
 	  format.js {render :show, locals: {labels: labels, sensor_id: @sensor.id }}
 	  format.html

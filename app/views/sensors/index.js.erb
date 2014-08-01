@@ -1,4 +1,4 @@
-    $('#resource .modal-body').html("<%= escape_javascript(render partial: 'sensors/list', locals: { sensors: @sensors}) %>")
+    $('#resource .modal-body').html("<%= escape_javascript(render partial: 'sensors/list', locals: { sensors: @sensors, descriptions: descriptions, identifications: identifications}) %>")
 
     $('#resource').modal('show')
 
