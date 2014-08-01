@@ -1,6 +1,4 @@
-$(function() {
-    $('#sensor .modal-body').html("<%= escape_javascript(render partial: 'sensors/list', locals: { sensors: @sensors}) %>")
+    $('#resource .modal-body').html("<%= escape_javascript(render partial: 'sensors/list', locals: { sensors: @sensors}) %>")
 
-    $('#sensor').modal('show')
+    $('#resource').modal('show')
 
-  })

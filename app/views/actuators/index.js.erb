@@ -1,1 +1,3 @@
-$('#actuator .modal-body').html("<%= escape_javascript(render partial: 'actuators/list', locals: { actuators: @actuators}) %>")
+$('#resource .modal-body').html("<%= escape_javascript(render partial: 'actuators/list', locals: { actuators: @actuators}) %>")
+
+$('#resource').modal('show')
