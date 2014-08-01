@@ -6,10 +6,16 @@ class ActuatorsController < ApplicationController
   # GET /actuators.json
   def index
     @actuators = Actuator.all
-		respond_to do |format|
-			format.js
-			format.html
-		end
+	descriptions = Array.new
+	identifications = Array.new
+	@actuators.each do |actuator|
+		descriptions.push(actuator_description actuator.capbility)
+		identifications.push(actuator_identification actuator.capbility)
+	end
+	respond_to do |format|
+		format.js { render :index, locals: {descriptions: descriptions, identifications: identifications}}
+		format.html
+	end
   end
 
 
