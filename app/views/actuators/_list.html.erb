@@ -2,7 +2,8 @@
   <% if actuators %>
     <% actuators.each do |a| %>
 	  <li><%= a.name %></li>
+	  <li><%= link_to "show", a, { remote: true} %></li>
 	  <li><%= a.capbility %></li>
-	<% end %>`
+	<% end %>
   <% end %>
 </ul>

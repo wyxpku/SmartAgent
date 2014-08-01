@@ -1,0 +1,7 @@
+<%= form_for :app, url: "#"  do |f| %>
+  <% labels.each do |k, v| %>
+	<%= f.label v %>
+	<%= f.text_field k %>
+  <% end %>
+<%= f.submit '123' %>
+<% end %>

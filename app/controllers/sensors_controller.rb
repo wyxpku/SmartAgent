@@ -22,9 +22,9 @@ class SensorsController < ApplicationController
   # GET /sensors/1.json
   def show
   	@sensor = Sensor.find(params[:id])
-	labels = parse @sensor.capbility
+	labels = SensorParse @sensor.capbility
 	respond_to do |format|
-	  format.js {render :show, locals: {labels: labels }}
+	  format.js {render :show, locals: {labels: labels, sensor_id: @sensor.id }}
 	  format.html
 	end
   end

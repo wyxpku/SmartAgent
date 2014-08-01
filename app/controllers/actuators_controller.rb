@@ -1,4 +1,5 @@
 class ActuatorsController < ApplicationController
+  include ResourceParser
   before_action :set_actuator, only: [:show, :edit, :update, :destroy]
 
   # GET /actuators
@@ -19,6 +20,12 @@ class ActuatorsController < ApplicationController
   # GET /actuators/1
   # GET /actuators/1.json
   def show
+	@actuator = Actuator.find(params[:id])
+	  labels = ActuatorParse @actuator.capbility
+	  respond_to do |format|
+	    format.js {render :show, locals: {labels: labels }}
+		format.html
+	end
   end
 
   # GET /actuators/new
