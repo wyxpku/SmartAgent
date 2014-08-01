@@ -2,9 +2,6 @@ class AppsController < ApplicationController
   def index
   end
 
-  
-
-
 
   def query
     @app = User.find(params[:user_id]).apps.find(params[:app_id])
@@ -21,19 +18,21 @@ class AppsController < ApplicationController
   end
 
   def create
-   @app = current_user.apps.build(app_params)
-  if @app.save
-    redirect_to pages_myapps_path, notice: 'Create an App!'
-  else
-    render pages_createapp_path
+    puts session[:app]
+    @app = current_user.apps.build()
+    @app.sensor_id = session[:app]["sensor"]["sensorid"]
+    @app.actuator_id = session[:app]["actuator"]["actuatorid"]
+    @app.sensor_params = session[:app]["sensor"]["condition"].to_s
+    @app.actuator_params = session[:app]["actuator"]["params"].to_s
+
+    render json: @app
   end
-end
 
-private
+  private
 
-def app_params
-  params.require(:app).permit(:name)
-end
+  def app_params
+    params.require(:app).permit(:name)
+  end
 
 
 end

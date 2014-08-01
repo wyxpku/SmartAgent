@@ -17,11 +17,14 @@ class ActuatorsController < ApplicationController
     @actuator = Actuator.all
     render json: @actuators
   end
+
   # GET /actuators/1
   # GET /actuators/1.json
   def show
 	@actuator = Actuator.find(params[:id])
-	  labels = ActuatorParse @actuator.capbility
+	  labels = actuator_parse @actuator.capbility
+    session[:app][:actuator] = Hash.new
+    session[:app][:actuator][:actuatorid] = @actuator.id
 	  respond_to do |format|
 	    format.js {render :show, locals: {labels: labels }}
 		format.html

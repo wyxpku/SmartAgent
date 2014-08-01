@@ -13,11 +13,13 @@ class PagesController < ApplicationController
       @apps = current_user.apps.all
     end
   end
+
   def createapp
-    if signin?
-      @app = current_user.apps.build
-    end
+    #important to initalize the session[:app]
+    session[:app] = Hash.new unless session[:app]
   end
+
+
   def viewapps
   end
   def resources

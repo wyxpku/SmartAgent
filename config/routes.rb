@@ -19,7 +19,9 @@ Rails.application.routes.draw do
   match '/signup', to: "users#new", :as => "signup", via: :get
   match '/signout', to: "sessions#destroy", :as => "signout", via: :get
   match '/signin', to: "sessions#new", :as => "signin", via: :get
-
+  
+  match '/session/sensor', to: "sessions#sensor", as: 'buildsensor', via: :post
+  match '/session/actuator', to: "sessions#actuator", as: 'buildactuator', via: :post
   
   get 'query/sensors', to: 'sensors#queryAll'
   get 'query/actuators', to: 'actuators#queryAll'
