@@ -1,0 +1,22 @@
+#cacontainer{
+	
+	height:600px;
+	position:relative;
+	
+	width:100%;
+	margin-top:30px;
+}
+#triggerdiv{
+	position:absolute;
+	top:0px;
+	left:0px;	
+}
+
+#actuatordiv{
+	
+	position:absolute;
+	top:0px;
+	left:0px;
+
+	
+}

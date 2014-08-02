@@ -33,7 +33,7 @@
           	</div> 
           </div>
           
-          <div class="actuatordiv" ondrop="drop2(event)" ondragover="allowdrop2(event)">
+          <div id="actuatordiv" ondrop="drop2(event)" ondragover="allowdrop2(event)">
             <div style="position:relative;top:0;right:0;">
             	<canvas id="actuatorcanvas" style="border:0;"  draggable="true" ondrag="drag(event);" ondragstart="dragstart(event);" ondragover="allowdrop(event)"> </canvas>
            	</div>

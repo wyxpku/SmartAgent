@@ -11,7 +11,7 @@
  * file per style scope.
  *
 
-
+ *= require createapplication
  *= require_tree .
  *= require_self
 
