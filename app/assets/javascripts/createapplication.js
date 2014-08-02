@@ -132,8 +132,6 @@ ctx.stroke();*/
 	}
 	function drag(event)
 	{
-	 console.log('drag-event')	
-		
 //alert(""+triggerdiv.style.top);
 		if(event.target.id=="triggercanvas")
 		{
