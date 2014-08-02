@@ -1,4 +1,4 @@
-$('.modal-dialog').removeClass('modal-lg')
+$('.modal-dialog').removeClass('modal-lg');
 
 $('#resource .modal-body').html("").html("<%= escape_javascript( render partial: 'share/resource_form', locals: {resource: resource, labels: labels}) %>")
 

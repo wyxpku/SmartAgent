@@ -1,4 +1,5 @@
-
+  sensor_color = '#ddd'
+  actuator_color = '#ddd' 
 	var tx=0;
 	var ty=0;
 	var ax=0;
@@ -75,9 +76,9 @@ ctx.stroke();*/
 		context.shadowOffsetX = 8;
 		context.shadowOffsetY = 6;
 		*/
-		context.strokeStyle="#660066";
+		context.strokeStyle="#ddd";
 		
-		context.fillStyle = "#660066";
+		context.fillStyle = "#ddd";
 		context.beginPath();
 		context.beginPath();
 		context.moveTo(0,r);
@@ -110,8 +111,8 @@ ctx.stroke();*/
 		if( canvas == null) return false;
 		
 		var context = canvas.getContext('2d');
-		context.strokeStyle="#3366CC";
-		context.fillStyle = "#3366CC";
+		context.strokeStyle="#ddd";
+		context.fillStyle = "#ddd";
 		context.moveTo(0,r);
 		context.lineTo(0,0.4*length);
 		context.lineTo(0.2*length,0.4*length);
@@ -203,8 +204,8 @@ ctx.stroke();*/
 		}
 		else
 		{
-			fill("actuatorcanvas","#3366CC");
-			fill("triggercanvas","#660066");
+			fill("actuatorcanvas", actuator_color);
+			fill("triggercanvas", sensor_color);
 			
 		}
 	}
@@ -218,11 +219,15 @@ ctx.stroke();*/
 		event.preventDefault();
 		
 	}
-	
-	$(document).ready(function(){
+
+  cuidie_drag = function(){
+
 		//alert($(window).width()+"**"+$(window).height());
-		
-		
+	  //if(shuaxin==0) {
+    //  shuaxin = 1; 
+    //  window.location.reload();	
+    //  }
+	//shuaxin = 0
 		//$("#triggercanvas").css({"width":window_width*percent,"height":300});
 		
 		drawtrigger('triggercanvas',window_width*percent,20);
@@ -251,4 +256,6 @@ ctx.stroke();*/
 		});
 		
 		
-	});
+	};
+	
+	$(document).ready(cuidie_drag);

@@ -94,6 +94,6 @@ class ActuatorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def actuator_params
-      params.require(:actuator).permit(:name, :capbility)
+      params.require(:actuator).permit(:name, :capbility, :url)
     end
 end

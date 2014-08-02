@@ -1,5 +1,13 @@
 
-$('.btn-<%= resource %>').addClass('btn-primary')
+
+<% if resource == 'sensor' %>
+  sensor_color = "#0000cd";
+  fill("triggercanvas", sensor_color);
+<% else %>
+  actuator_color = "#ff0";
+  fill("actuatorcanvas", actuator_color);
+<% end %>
+
 
 $('.modal').modal('hide')
 
