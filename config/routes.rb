@@ -22,7 +22,10 @@ Rails.application.routes.draw do
   
   match '/session/sensor', to: "sessions#sensor", as: 'buildsensor', via: :post
   match '/session/actuator', to: "sessions#actuator", as: 'buildactuator', via: :post
-  
+  match '/app/confirm', to: "apps#confirm", as: 'app_confirm', via: :get
+
+
+
   get 'query/sensors', to: 'sensors#queryAll'
   get 'query/actuators', to: 'actuators#queryAll'
   

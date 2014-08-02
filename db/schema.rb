@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140801015009) do
+ActiveRecord::Schema.define(version: 20140802081830) do
 
   create_table "actuators", force: true do |t|
     t.string   "name"
     t.text     "capbility"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "url"
   end
 
   create_table "apps", force: true do |t|
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140801015009) do
     t.text     "capbility"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "url"
   end
 
   create_table "users", force: true do |t|

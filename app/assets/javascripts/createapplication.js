@@ -201,6 +201,7 @@ ctx.stroke();*/
 		{
 			fill("actuatorcanvas","#99FF00");
 			fill("triggercanvas","#99FF00");
+      $('#hidden-a').trigger('click');
 		}
 		else
 		{
