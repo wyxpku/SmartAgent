@@ -5,13 +5,17 @@ class SessionsController < ApplicationController
 
 
   def sensor
-    session[:app]["sensor"][:condition] = params[:condition] 
-    render 'pages/createapp'
-    end
+    session[:app]["sensor"]["condition"] = params[:condition] 
+  respond_to do |format|
+    format.js {render 'share/resource_form_check', locals: {resource: 'sensor'}}
+  end
+  end
 
   def actuator
-    session[:app]["actuator"][:params] = params[:params]
-    render 'pages/createapp'
+    session[:app]["actuator"]["params"] = params[:params]
+    respond_to do |format|
+    format.js {render 'share/resource_form_check', locals: {resource: 'actuator'}}
+  end
   end
 
 

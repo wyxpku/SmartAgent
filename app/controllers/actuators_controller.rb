@@ -29,8 +29,8 @@ class ActuatorsController < ApplicationController
   def show
 	@actuator = Actuator.find(params[:id])
 	  labels = actuator_parse @actuator.capbility
-    session[:app][:actuator] = Hash.new
-    session[:app][:actuator][:actuatorid] = @actuator.id
+    session[:app]["actuator"] = Hash.new
+    session[:app]["actuator"]["actuatorid"] = @actuator.id
 	  respond_to do |format|
 	    format.js {render 'share/resource_form', locals: {resource: :actuator, labels: labels }}
 		format.html

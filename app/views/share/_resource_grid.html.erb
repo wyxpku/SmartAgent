@@ -11,6 +11,7 @@
 
         <%= link_to image_tag('heihei.jpg'), resources[i], remote: true, class: 'resource-img', "data-toggle" => "popover", title: resources[i].name, "data-content" => content %>
         <figcaption>
+        <span><%= resources[i].name %></span>
         <% descriptions[i].each do |k,v| %>
          <%= k %>:</br><%= v %>
         <% end %>

@@ -29,8 +29,8 @@ class SensorsController < ApplicationController
   def show
     @sensor = Sensor.find(params[:id])
     labels = sensor_parse @sensor.capbility
-    session[:app][:sensor] = Hash.new
-    session[:app][:sensor][:sensorid] = @sensor.id
+    session[:app]["sensor"] = Hash.new
+    session[:app]["sensor"]["sensorid"] = @sensor.id
     respond_to do |format|
       format.js {render 'share/resource_form', locals: {resource: :sensor,labels: labels}}
       format.html

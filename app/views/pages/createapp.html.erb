@@ -3,11 +3,11 @@
   <div class="container">
 
     <!-- Button trigger modal -->
-    <%= button_to "传感器", sensors_path, remote: true, method: :get, "data-toggle" => "modal", class: "btn btn-primary btn-lg" %>
+    <%= button_to "传感器", sensors_path, remote: true, method: :get, "data-toggle" => "modal", class: "btn btn-lg btn-sensor" %>
     <!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sensor" >
       传感器 
     </button>-->
-    <%= button_to "执行器", actuators_path, remote: true, method: :get, "data-toggle" => "modal", class: "btn btn-primary btn-lg" %> 
+    <%= button_to "执行器", actuators_path, remote: true, method: :get, "data-toggle" => "modal", class: "btn btn-lg btn-actuator" %> 
 
 
     <%= button_to "创建应用", user_apps_path(current_user), class: "btn btn-primary btn-lg" %> 

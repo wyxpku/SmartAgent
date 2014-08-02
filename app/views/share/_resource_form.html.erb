@@ -7,7 +7,7 @@
     urlpath = buildactuator_path
   end %>
 
-  <%= form_for param_name, url: urlpath do |f| %>
+  <%= form_for param_name, url: urlpath, remote: true do |f| %>
     <% labels.each do |k, v| %>
       <div class="form-group">
         <%= f.label v %>

@@ -25,7 +25,7 @@ class AppsController < ApplicationController
     @app.sensor_params = session[:app]["sensor"]["condition"].to_s
     @app.actuator_params = session[:app]["actuator"]["params"].to_s
 
-    render json: @app
+    render json: session[:app] 
   end
 
   private

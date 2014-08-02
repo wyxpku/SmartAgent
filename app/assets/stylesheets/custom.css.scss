@@ -69,7 +69,7 @@ padding-right: 17px;
  }
 .top {
   padding:40px 0;
-  background-image: image-url("top1.jpg");
+  background-image: image-url("top2.jpg");
   background-repeat: no-repeat;
   background-position: 50% 45%;
   //margin:1px 0 15px 0;
@@ -149,6 +149,11 @@ display:inline;
    width: 100%;
    height: 250px;
    display:block; 
+  }
+  span {
+    display:block;
+    font-weight:bold;
+
   }
 }
 
