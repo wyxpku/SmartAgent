@@ -11,7 +11,14 @@
           <li><%= link_to "创建应用", pages_createapp_path %></li>
           <li><%= link_to "浏览应用", pages_apps_path %></li>
           <li><%= link_to "浏览资源", pages_resources_path %></li>
-          <li><%= link_to "我", pages_index_path %></li>
+		  <li class="dropdown">
+		  	<a href="#" class="dropdown-toggle" data-toggle="dropdown">我<b class="caret"></b></a>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="drop">
+			  <li><%= link_to "开发者模式", pages_developer_path %></li>
+			  <li><%= link_to "退出", signout_path %>
+			</ul>
+
+		  </li>
         <% else %>
           <li>
           <%= link_to "登陆", signin_path %>
