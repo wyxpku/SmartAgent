@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140802081830) do
+ActiveRecord::Schema.define(version: 20140802103625) do
 
   create_table "actuators", force: true do |t|
     t.string   "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140802081830) do
     t.integer  "actuator_id"
     t.text     "actuator_params"
     t.text     "sensor_params"
+    t.text     "description"
   end
 
   create_table "sensors", force: true do |t|

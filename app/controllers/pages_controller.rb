@@ -15,6 +15,7 @@ class PagesController < ApplicationController
   end
 
   def createapp
+    @app = current_user.apps.build()
     #important to initalize the session[:app]
     session[:app] = Hash.new unless session[:app]
   end

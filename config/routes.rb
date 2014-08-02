@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   match '/session/actuator', to: "sessions#actuator", as: 'buildactuator', via: :post
   match '/app/confirm', to: "apps#confirm", as: 'app_confirm', via: :get
 
-
+  match '/app/build', to: 'apps#create', as: 'app_build', via: :post
 
   get 'query/sensors', to: 'sensors#queryAll'
   get 'query/actuators', to: 'actuators#queryAll'

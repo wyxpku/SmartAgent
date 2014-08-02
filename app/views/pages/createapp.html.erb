@@ -1,6 +1,6 @@
 <%= render 'share/header' %>
 
-<div id="main">
+<div class="main">
   <div class="container" >
     <div id="cacontainer" ondrop="drop(event)" ondragover="allowdrop(event)">
       <div id="help"></div>
@@ -10,7 +10,6 @@
         <div style="position:relative;top:0;right:0;">
           <canvas id="triggercanvas"  style="border:0;" draggable="true" ondrag="drag(event);" ondragstart="dragstart(event);"> </canvas>
         </div>
-        <div id="triggertitle" style="position:absolute;top:-40px;font-size:20px;color:#330033">触发器</div>
         <div id="triggercontent" style="position:absolute;top:40%;left:25%;">
           <%= button_to "触发器", sensors_path, remote: true, method: :get, "data-toggle" => "modal", class: "btn btn-primary btn-lg" %>
         </div> 
@@ -20,7 +19,6 @@
         <div style="position:relative;top:0;right:0;">
           <canvas id="actuatorcanvas" style="border:0;"  draggable="true" ondrag="drag(event);" ondragstart="dragstart(event);" ondragover="allowdrop(event)"> </canvas>
         </div>
-        <div id="actuatortitle" style="position:absolute;top:-40px;font-size:20px;color:#330033">执行器</div>
         <div id="actuatorcontent" style="position:absolute;top:40%;left:25%;">
           <%= button_to "执行器", actuators_path, remote: true, method: :get, "data-toggle" => "modal", class: "btn btn-primary btn-lg" %> 
         </div> 
