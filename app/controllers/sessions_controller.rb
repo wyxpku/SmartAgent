@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
     if user
       session[:user_id] = user.id
       flash[:success] = "登陆成功！欢迎回来~"
-      redirect_to pages_createapp_path
+      redirect_to pages_index_path
     else
       flash[:danger] = "糟糕! 邮箱或密码错误"
       redirect_to signin_path

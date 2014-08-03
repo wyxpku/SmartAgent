@@ -1,33 +1,42 @@
-<%= javascript_include_tag "special/createmap" %>
+<script>
+  function clickmap(){ 
+    getMap(222.29.35.126)
+  }
+  };
+</script>
 
-<div style ="padding: 100px 300px 0px" >
-	<input class="search_input" id="search_field" name="q" placeholder="Search" type="text" />
-  <button class="search_button" >搜索</button>
-</div>
+
+<div class="main">
 <div class="container">
-  
+
+    <div clsss="input-group">
+      <input type="text" class="form-control" style='float:left; width:80%'>
+      <span class="input-group-btn"  style='width:40px;'>
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div>
+
+
   <div class="tabbable tabs-left">
     <ul class="nav nav-tabs">
       <li class="active">
         <a class="mytab" href="#viewapps" data-toggle="tab">所有应用</a>
       </li>
       <li>
-        <a class="mytab" href="#arrounds" data-toggle="tab">查看附近应用</a>
+        <a class="mytab" href="#arrounds" data-toggle="tab" onclick="clickmap()">查看附近应用</a>
       </li>
     </ul>
   	<div class="tab-content">
   		<div class="tab-pane fade active in" id="viewapps">
-    		a
+				
+				<%= render "apps/list" %>
   		</div>
   		<div class="tab-pane fade" id="arrounds">
-    		b
         <%= render "share/map" %>
 			</div>
   	</div>
 	</div>
 </div>
-
+</div>
+<%= javascript_include_tag "special/createmap" %>
 <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
-<script type="text/javascript">
-  getMap("222.29.35.126");
-</script>
