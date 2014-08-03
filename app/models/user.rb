@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
   has_many :apps
+	has_many :sensors
+	has_many :actuators
   before_save :encrypt_password
 
   attr_accessor :password

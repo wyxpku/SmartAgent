@@ -7,8 +7,11 @@
         <a class="mytab" href="#iamdeveloper" data-toggle="tab">我是开发者</a>
       </li>
       <li>
-        <a class="mytab" href="#resourceregister" data-toggle="tab">资源注册</a>
+        <a class="mytab" href="#newsensor" data-toggle="tab">感受器注册</a>
       </li>
+			<li>
+				<a class="mytab" href="#newactuator" data-toggle="tab">执行器注册</a>
+			</li>
       <li>
         <a class="mytab" href="#myresource" data-toggle="tab">我的资源</a>
       </li>
@@ -31,15 +34,17 @@
 		<%= link_to "获取API Key", "#" %>
 
 	</div>
-  <div class="tab-pane fade" id="resourceregister">
-   	
-      <%= render "sensors/form" %>
-  
+  <div class="tab-pane fade" id="newsensor">
+		<h2>创建新的感受器：</h2>
+    <%= render "sensors/form" %>
   </div>
+	<div class="tab-pane fade" id="newactuator">
+		<h2>创建新的执行器：</h2>
+		<%= render "actuators/form" %>
+	</div>
   <div class="tab-pane fade" id="myresource">
-    
         <h1>my sources</h1>
-     
+			<%= render "sensors/index" %>
     </div>
   </div>
 </div>

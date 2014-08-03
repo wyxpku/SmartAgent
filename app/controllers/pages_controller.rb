@@ -27,6 +27,9 @@ class PagesController < ApplicationController
   end
   def developer
 		@sensor = Sensor.new
+		@actuator = Actuator.new
+		@sensors = current_user.sensors
+		@actuators = current_user.actuators
   end
   def pages_myaccount
   end
