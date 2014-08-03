@@ -10,6 +10,7 @@
   </tr>
 </thead>
 <tbody>
+  <% if @apps %>
 <% @apps.each do |app| %>
 	<tr>
 		<td><%= app.name %></td>
@@ -19,6 +20,7 @@
 		<td><input type="checkbox" name="my-checkbox" checked></td>
 		<td><%= link_to 'Destroy', [current_user, app], method: :delete ,data: { confirm: 'Are you sure?' } %></td>
 	</tr>
+<% end %>
 <% end %>
 </tbody>
 </table>
