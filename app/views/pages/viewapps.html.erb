@@ -1,4 +1,5 @@
-<%= render "share/header" %>
+<%= javascript_include_tag "special/createmap" %>
+
 <div style ="padding: 100px 300px 0px" >
 	<input class="search_input" id="search_field" name="q" placeholder="Search" type="text" />
   <button class="search_button" >搜索</button>
@@ -30,4 +31,3 @@
 <script type="text/javascript">
   getMap("222.29.35.126");
 </script>
-<%= render "share/footer" %>

@@ -1,29 +1,17 @@
-<%= form_for(@actuator) do |f| %>
-  <% if @actuator.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@actuator.errors.count, "error") %> prohibited this actuator from being saved:</h2>
-
-      <ul>
-      <% @actuator.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<h2>注册新的执行器</h2>
+<%= form_for [current_user, @actuator] do |f| %>
+  
+  <div class='form-group'> 
+    <%= f.label :name, '名称' %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :capbility %><br>
-    <%= f.text_area :capbility %>
-    </div>
-    <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
+  <div class="form-group">
+    <%= f.label :capbility, '执行器描述ML' %>
+    <%= f.text_area :capbility, class: 'form-control' %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.label :url, '执行器url'%>
+    <%= f.text_field :url, class: 'form-control' %>
   </div>
+  <%= f.submit '注册', class: 'btn btn-lg btn-default' %>
 <% end %>

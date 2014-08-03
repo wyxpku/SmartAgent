@@ -49,11 +49,11 @@ class ActuatorsController < ApplicationController
   # POST /actuators
   # POST /actuators.json
   def create
-    @actuator = Actuator.new(actuator_params)
+    @actuator = current_user.actuators.build(actuator_params)
 
     respond_to do |format|
       if @actuator.save
-        format.html { redirect_to @actuator, notice: 'Actuator was successfully created.' }
+        format.html { redirect_to '/pages/developer', notice: '成功注册一个执行器' }
         format.json { render :show, status: :created, location: @actuator }
       else
         format.html { render :new }

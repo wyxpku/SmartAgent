@@ -26,10 +26,10 @@ class PagesController < ApplicationController
   def resources
   end
   def developer
-		@sensor = Sensor.new
-		@actuator = Actuator.new
-		@sensors = current_user.sensors
-		@actuators = current_user.actuators
+		@sensor = current_user.sensors.build
+		@actuator = current_user.actuators.build
+		@sensors = current_user.sensors.all
+		@actuators = current_user.actuators.all
   end
   def pages_myaccount
   end

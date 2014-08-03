@@ -7,8 +7,9 @@
         <%= csrf_meta_tags %>
   </head>
   <body>
+<%= render 'share/header' %>
     <%= flash[:notice] %>
     <%= yield %>
-
+<%= render 'share/footer' %>
   </body>
 </html>

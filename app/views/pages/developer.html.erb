@@ -1,54 +1,49 @@
-<%= render "share/header" %>
-<h1></br></br></h1>
-<div class="container">
-  <div class="tabbable tabs-left">
-    <ul class="nav nav-tabs">
-		  <li class="active">
-        <a class="mytab" href="#iamdeveloper" data-toggle="tab">我是开发者</a>
-      </li>
-      <li>
-        <a class="mytab" href="#newsensor" data-toggle="tab">感受器注册</a>
-      </li>
-			<li>
-				<a class="mytab" href="#newactuator" data-toggle="tab">执行器注册</a>
-			</li>
-      <li>
-        <a class="mytab" href="#myresource" data-toggle="tab">我的资源</a>
-      </li>
-    </ul>
-  <div class="tab-content">
-  <div class="tab-pane fade active in" id="iamdeveloper">
-    <h2>开发者SDK下载</h2>
+<div class='main'>
+  <div class="container">
+    <div class="tabbable tabs-left">
+      <ul class="nav nav-tabs">
+        <li class="active">
+        <a class="mytab" href="#iamdeveloper" data-toggle="tab">开发者资源</a>
+        </li>
+        <li>
+        <a class="mytab" href="#newsensor" data-toggle="tab">传感器注册</a>
+        </li>
+        <li>
+        <a class="mytab" href="#newactuator" data-toggle="tab">执行器注册</a>
+        </li>
+        <li>
+        <a class="mytab" href="#myresource" data-toggle="tab">我注册的资源</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade active in" id="iamdeveloper">
+          <h2>开发者SDK下载</h2>
 
-		<h4>开发者SDK使您快速完成Sensor/Actuator的开发,移动端开发请下载iOS/Android SDK，PC端开发请下载PC 版SDK</h4>
-		<%= link_to "Download fo ISO", "#" %></br>
-		<%= link_to "Download fo Android", "#" %></br>
-		<%= link_to "Download fo PC", "#" %>
+          <h4>开发者SDK使您快速完成Sensor/Actuator的开发,移动端开发请下载iOS/Android SDK，PC端开发请下载PC 版SDK</h4>
+          <%= link_to "Download fo ISO", "#" %></br>
+          <%= link_to "Download fo Android", "#" %></br>
+          <%= link_to "Download fo PC", "#" %>
 
-		<h2>Eclipse开发插件</h2>
-		<h4>Eclipse开发插件帮助您在Eclipse中封装已有的业务逻辑，迅速接入平台</h4>
-    <%= link_to "Download Eclipse Plugin", "#" %>
+          <h2>Eclipse开发插件</h2>
+          <h4>Eclipse开发插件帮助您在Eclipse中封装已有的业务逻辑，迅速接入平台</h4>
+          <%= link_to "Download Eclipse Plugin", "#" %>
 
-		<h2>API Key</h2>
-		<h4>API Key帮助我们识别您的作品</h4>		
-		<%= link_to "获取API Key", "#" %>
+          <h2>API Key</h2>
+          <h4>API Key帮助我们识别您的作品</h4>		
+          <%= link_to "获取API Key", "#" %>
 
-	</div>
-  <div class="tab-pane fade" id="newsensor">
-		<h2>创建新的感受器：</h2>
-    <%= render "sensors/form" %>
-  </div>
-	<div class="tab-pane fade" id="newactuator">
-		<h2>创建新的执行器：</h2>
-		<%= render "actuators/form" %>
-	</div>
-  <div class="tab-pane fade" id="myresource">
-        <h1>my sources</h1>
-			<%= render "sensors/index" %>
+        </div>
+        <div class="tab-pane fade" id="newsensor">
+          <%= render "sensors/form" %>
+        </div>
+        <div class="tab-pane fade" id="newactuator">
+          <%= render "actuators/form" %>
+        </div>
+        <div class="tab-pane fade" id="myresource">
+          <%= render "users/resource" %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-</div>
 
-<%= render "share/footer" %>
-
+</div>

@@ -49,11 +49,11 @@ class SensorsController < ApplicationController
   # POST /sensors
   # POST /sensors.json
   def create
-    @sensor = Sensor.new(sensor_params)
+    @sensor = current_user.sensors.build(sensor_params)
 
     respond_to do |format|
       if @sensor.save
-        format.html { redirect_to @sensor, notice: 'Sensor was successfully created.' }
+        format.html { redirect_to '/pages/developer', notice: '成功注册了' }
         format.json { render :show, status: :created, location: @sensor }
       else
         format.html { render :new }

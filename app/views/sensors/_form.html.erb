@@ -1,30 +1,18 @@
-<%= form_for [current_user, @sensor] do |f| %>
-  <% if @sensor.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@sensor.errors.count, "error") %> prohibited this sensor from being saved:</h2>
+  <h2>注册新的传感器</h2>
+  <%= form_for [current_user, @sensor] do |f| %>
 
-      <ul>
-      <% @sensor.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="form-group">
+      <%= f.label :name, '名称' %>
+      <%= f.text_field :name, class: 'form-control' %>
     </div>
+    <div class="form-group">
+      <%= f.label :capbility, '传感器描述ML' %>
+      <%= f.text_area :capbility, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :url, '传感器url' %> 
+      <%= f.text_field :url, class: 'form-control' %>
+    </div>
+
+    <%= f.submit '注册', class: 'btn btn-lg btn-default' %>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :capbility %><br>
-    <%= f.text_area :capbility %>
-  </div>
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_area :url %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

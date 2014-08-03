@@ -1,0 +1,23 @@
+<h2>我注册的资源</h2>
+
+
+
+<h3>传感器资源</h3>
+<% if @sensors %>
+  <ul>
+    <% @sensors.each do |s| %>
+      <li> <h5><%= s.name %></h5></li>
+    <% end %>
+  </ul>
+<% end %> 
+
+<h3>执行器资源</h3>
+<% if @actuators %>
+  <ul>
+    <% @actuators.each do |a| %>
+      <li>  <h5><%= a.name %></h5></li>
+    <% end %>
+  </ul>
+<% end %> 
+
+
