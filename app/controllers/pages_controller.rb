@@ -5,7 +5,10 @@ class PagesController < ApplicationController
     end
   end
   def index
-    @apps = current_user.apps.all
+		if signin?
+			@apps = current_user.apps.all
+			render :index
+		end
   end
   def location
   end
@@ -23,7 +26,8 @@ class PagesController < ApplicationController
 
 
   def viewapps
-  end
+  	@apps = App.all
+	end
   def resources
     @sensors = Sensor.all
     @actuators = Actuator.all
