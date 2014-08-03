@@ -16,7 +16,7 @@ class AppsController < ApplicationController
   def destroy
     @app = current_user.apps.find(params[:id])
     if @app.destroy
-      redirect_to pages_myapps_path, notice: 'Delete an App!'
+      redirect_to pages_index_path, notice: 'Delete an App!'
     else
       render pages_myapps_path
     end
@@ -26,6 +26,8 @@ class AppsController < ApplicationController
     @app = current_user.apps.build()
     @app.sensor_id = session[:app]["sensor"]["sensorid"]
     @app.actuator_id = session[:app]["actuator"]["actuatorid"]
+		@app.name = params[:app_name]
+		@app.description = params[:app_description]
     #生成崔爹格式json
     崔爹 = Hash.new
     崔爹["userid"] = current_user.id
@@ -46,7 +48,7 @@ class AppsController < ApplicationController
       崔爹["appid"] = @app.id
       sess = Patron::Session.new
       sess.base_url = "http://192.168.4.222:10000"
-      sess.post("/ruleService/addRule", 崔爹.to_json, {"Content-Type" => "text/plain"})
+      #sess.post("/ruleService/addRule", 崔爹.to_json, {"Content-Type" => "text/plain"})
       render json: 崔爹.to_json
     else
       render pages_createapp_path 

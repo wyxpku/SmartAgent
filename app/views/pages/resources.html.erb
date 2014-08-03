@@ -1,12 +1,13 @@
 <%= render "share/header" %>
 <div class="main">
   <div class="container">
-    <div class="search">
-      <%= form_tag '#', class: "form-search" do %>
-        <%= text_field_tag "search", "", :class => 'search-query'  %>
-        <%= button_tag "搜索", class: 'btn' %>
-      <% end %>
-
+  	<div>
+  		<h2>Sensors</h2>
+    	<%= render "sensors/list" %>
+    </div>
+    <div>
+    	<h2>Actuators</h2>
+    	<%= render "actuators/list" %>
     </div>
   </div>
 </div>

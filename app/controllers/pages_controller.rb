@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     end
   end
   def index
+    @apps = current_user.apps.all
   end
   def location
   end
@@ -24,6 +25,8 @@ class PagesController < ApplicationController
   def viewapps
   end
   def resources
+    @sensors = Sensor.all
+    @actuators = Actuator.all
   end
   def developer
 		@sensor = Sensor.new
