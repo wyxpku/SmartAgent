@@ -1,4 +1,3 @@
-require 'json'
 class AppsController < ApplicationController
   def index
   end
@@ -45,6 +44,9 @@ class AppsController < ApplicationController
 
     if @app.save
       崔爹["appid"] = @app.id
+      sess = Patron::Session.new
+      sess.base_url = "http://192.168.4.222:10000"
+      sess.post("/ruleService/addRule", 崔爹.to_json, {"Content-Type" => "text/plain"})
       render json: 崔爹.to_json
     else
       render pages_createapp_path 
