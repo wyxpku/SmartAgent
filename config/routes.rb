@@ -32,7 +32,9 @@ Rails.application.routes.draw do
   get 'query/user/:user_id/apps', to: 'users#queryApps'
 
   resources :actuators
+	match 'user/actuators', to: 'actuators#creats', :as=>'user_actuators', via: :post
   resources :sensors
+	match 'user/sensors', to: "sensors#create",:as => 'user_sensors', via: :post
   resources :sessions, only: [:new, :create, :destroy] 
 
 
