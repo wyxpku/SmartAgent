@@ -49,7 +49,7 @@ class AppsController < ApplicationController
       崔爹["appid"] = @app.id
       sess = Patron::Session.new
       sess.base_url = "http://192.168.4.222:10000"
-      sess.post("/ruleService/addRule", 崔爹.to_json, {"Content-Type" => "text/plain"})
+     # sess.post("/ruleService/addRule", 崔爹.to_json, {"Content-Type" => "text/plain"})
       redirect_to pages_index_path
     else
       render pages_createapp_path 
